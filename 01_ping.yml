@@ -1,0 +1,8 @@
+---
+- name: Ping CSR01
+  hosts: cisco
+
+  tasks:
+    - name: lauching Ping
+      ping:
+  

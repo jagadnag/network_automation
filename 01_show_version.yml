@@ -1,0 +1,14 @@
+---
+- name: Collect show version
+  hosts: cisco
+
+  tasks:
+    - name: run show version on remote devices
+      ios_command:
+        commands: show version
+      register: output
+
+    - debug: var=output   
+
+
+  
