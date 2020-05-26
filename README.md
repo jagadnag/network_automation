@@ -13,6 +13,10 @@ Refer the getting started documentation once before you start the lab tasks:
 - Develop a basic playbook
 - Use cisco-ios modules to collect information and configure devices
 
+### Lab Setup
+- Windows Users > Install a linux vm with python3 and use pip to install ansible
+- Mac Users > can natively install python3 using homebrew and use pip to install ansible
+- csr1000v running as a virtual machine with ssh enabled
 
 ## 1.1 Virtual Environments and Ansible Installation
 
@@ -37,6 +41,7 @@ Refer the getting started documentation once before you start the lab tasks:
 6. Use `pip install ansible==2.8.12` and `pip install paramiko` to install ansible and paramiko SSH library.
 
 7. View `pip list` again to see what is now installed.
+
 
 - Optionally export the packages installed in your virtual environment to a `requirements.txt` file. This file could be shared with others so that they are able to reproduce your virtual environment.
 
