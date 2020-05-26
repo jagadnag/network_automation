@@ -4,16 +4,15 @@
 
 # 1. Ansible introduction
 
+Refer the getting started documentation once before you start the lab tasks:
+`https://docs.ansible.com/ansible/2.8/network/getting_started/index.html`
+
 ### Objective
 - Setup your ansible environment: ansible.cfg & hosts file
 - Run Ansible ad-hoc commands
+- Develop a basic playbook
+- Use cisco-ios modules to collect information and configure devices
 
-### Lab exercises
-- The following topics are covered:
- - Configuration file
- - Inventory file
- - Ansible modules
- - Ad-hoc commands
 
 ## 1.1 Virtual Environments and Ansible Installation
 
@@ -39,11 +38,11 @@
 
 7. View `pip list` again to see what is now installed.
 
-8. Optionally export the packages installed in your virtual environment to a `requirements.txt` file. This file could be shared with others so that they are able to reproduce your virtual environment.
+- Optionally export the packages installed in your virtual environment to a `requirements.txt` file. This file could be shared with others so that they are able to reproduce your virtual environment.
 
     `pip list > requirements.txt`
 
-9. Exit your current virtualenv using the "deactivate" command.
+- You can exit your current virtualenv using the "deactivate" command.
 
 ## 1.2 Verify Ansible Insallation
 
@@ -90,19 +89,72 @@ retry_files_enabled = False
 interpreter_python = auto_silent
 ```
 
-## 1.5 Configure the hosts.yml file
+## 1.5 Create Ansible Inventory using hosts.yml file
 
-We will be providing all the details related to the managed hosts in the hosts.yml file. For more details refer to `https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html`
+All details related to the managed hosts will be provided through the hosts.yml file. For more details refer to `https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html`
 
 - Create a new file named hosts.yml and define your managed hosts (csr1000v) details. 
 
 ```
 [cisco]
-csr01 ansible_host=192.168.128.111
+csr01 ansible_host=192.168.x.x (change the ip address)
 
 [cisco:vars]
 ansible_user=cisco
 ansible_password=cisco
 ansible_connection=network_cli
 ansible_network_os=ios
+```
+
+Task 1:
+- Create two groups 'core' and 'branch', define few dummy hosts under it.
+- Create a parent group named 'routers' and add core and branch to it.
+- Define the ansible_user and ansible_password variables for the routers group.
+
+## 1.6 Develop a basic playbook
+
+Create a basic playbook and run it using the `ansible-playbook` command. 
+
+- Example playbook:
+
+```
+---
+- name: Ping CSR01
+  hosts: cisco
+
+  tasks:
+    - name: lauching Ping
+      ping:
+```
+
+## 1.7 Write playbook using cisco-ios modules
+
+Refer cisco ios module documentaion and write simple playbooks.
+
+Task 1:
+- Write a playbook to collect show version command output
+- Use the debug module to print the output to the screen
+
+Task 2:
+- Write a playbook to configure a new syslog-server
+- Use the debug module to print the output to the screen
+
+Task 3:
+- Write a playbook to use ios_facts module
+- Use the debug module to print the facts to the screen
+
+Example playbook, pls refer to module documenation and call the correct modules and arguments. 
+
+```
+---
+- name: Collect show version
+  hosts: cisco
+
+  tasks:
+    - name: run show version on remote devices
+      ios_command:
+        commands: show version
+      register: output
+
+    - debug: var=output.stdout_lines
 ```
