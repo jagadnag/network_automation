@@ -68,3 +68,41 @@
 - Ansible Online doumentation:
     `https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html' 
 
+
+## 1.4 Configure the ansible.cfg file
+
+1. All ansible related configuration can be configured the ansible.cfg file. As a best practise you will be creating the file in the project directory.
+
+- Create a new file named ansible.cfg and apply the below mentioned config
+
+```
+[defaults]
+gathering = explicit
+inventory = hosts.yml
+
+# SSH Host keys
+host_key_checking = False
+host_key_auto_add = True
+
+# Settings to remove warnings
+deprecation_warnings = False
+retry_files_enabled = False
+interpreter_python = auto_silent
+```
+
+## 1.5 Configure the hosts.yml file
+
+1. We will be providing all the details related to the managed hosts in the hosts.yml file. For more details refer to `https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html`
+
+- Create a new file named hosts.yml and define your managed hosts (csr1000v) details. 
+
+```
+[cisco]
+csr01 ansible_host=192.168.128.111
+
+[cisco:vars]
+ansible_user=cisco
+ansible_password=cisco
+ansible_connection=network_cli
+ansible_network_os=ios
+```
