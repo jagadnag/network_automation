@@ -5,7 +5,7 @@
 # 1. Ansible introduction
 
 Refer the getting started documentation once before you start the lab tasks:
-    `https://docs.ansible.com/ansible/2.8/network/getting_started/index.html`
+    https://docs.ansible.com/ansible/2.8/network/getting_started/index.html
 
 ### Objective
 - Setup your ansible environment: ansible.cfg & hosts file
@@ -65,7 +65,7 @@ Ansible by default ships with several modules, you can access the module documen
     `ansible-doc ios_command` > type the module name directly and read through the documentation.
 
 - Ansible Online doumentation:
-    `https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html` 
+    https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html 
 
 
 ## 1.4 Configure the ansible.cfg file
@@ -91,7 +91,7 @@ interpreter_python = auto_silent
 
 ## 1.5 Create Ansible Inventory using hosts.yml file
 
-All details related to the managed hosts will be provided through the hosts.yml file. For more details refer to `https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html`
+All details related to the managed hosts will be provided through the hosts.yml file. For more details refer to - https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html
 
 - Create a new file named hosts.yml and define your managed hosts (csr1000v) details. 
 
