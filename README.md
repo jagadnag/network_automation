@@ -5,7 +5,7 @@
 # 1. Ansible introduction
 
 Refer the getting started documentation once before you start the lab tasks:
-`https://docs.ansible.com/ansible/2.8/network/getting_started/index.html`
+    `https://docs.ansible.com/ansible/2.8/network/getting_started/index.html`
 
 ### Objective
 - Setup your ansible environment: ansible.cfg & hosts file
@@ -16,7 +16,7 @@ Refer the getting started documentation once before you start the lab tasks:
 
 ## 1.1 Virtual Environments and Ansible Installation
 
-1. Make a mock project directory "myproject" in your home directory:
+1. Make a project directory "myproject" in your home directory:
 
    `cd ~ && mkdir myproject`
 
@@ -65,7 +65,7 @@ Ansible by default ships with several modules, you can access the module documen
     `ansible-doc ios_command` > type the module name directly and read through the documentation.
 
 - Ansible Online doumentation:
-    `https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html' 
+    `https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html` 
 
 
 ## 1.4 Configure the ansible.cfg file
