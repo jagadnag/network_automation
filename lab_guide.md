@@ -1,32 +1,5 @@
 ---
-# **<p align="center">Lab Guide</p>**
-
----
- **<p align="center">Gowtham Tamilselvan | Muthuraja Ayyanar | Yogi Raghunathan </p>**
-
- **<p align="center">June 10 2019</p>**
----
-
-
-# Table of Contents
-
-
-- [1. Ansible Introduction](#1-ansible-introduction)
-	- [1.1 Configuration file](#11-configuration-file)
-	- [1.2 Inventory file](#12-inventory-file)
-	- [1.3 Ansible modules](#13-ansible-modules)
-	- [1.4 Ad-hoc commands](#14-ad-hoc-commands)
-- [2. Playbook Primer](#2-playbook-primer)
-	- [2.1 Raw module](#21-raw-module)
-	- [2.2 IOS command module](#22-ios-command-module)
-	- [2.3 XR command module](#23-xr-command-module)
-	- [2.4 IOS config module](#24-ios-config-module)
-	- [2.5 XR config module](#25-xr-config-module)
-	- [2.6 Variables](#26-variables)
-	- [2.7 Loops](#27-loops)
-	- [2.8 Conditionals](#28-conditionals)
-	- [2.9 Importing playbooks](#29-importing-playbooks)
-
+# **<p align="center">Network Automation Workshop Lab Guide</p>**
 ---
 
 # 1. Ansible introduction
@@ -42,7 +15,47 @@
  - Ansible modules
  - Ad-hoc commands
 
-## 1.1 Configuration file
+## 1.1 Virtual Environments and Ansible Installation
+
+1. Make a mock project directory "myproject" in your home directory:
+
+   `cd ~ && mkdir myproject`
+
+2. cd into this myproject directory
+
+    `cd myproject`
+
+3. Create a new virtual environment named 'venv'
+
+    `python3 -m venv`
+
+4. Activate that virtual environment using:
+
+    `source venv/bin/activate`
+
+5. Execute the `pip list` command to make sure you have a blank virtual environment.
+
+6. Use `pip install ansible==2.8.12` and `pip install paramiko` to install ansible and paramiko SSH library.
+
+8. View `pip list` again to see what is now installed.
+
+9. Optionally export the packages installed in your virtual environment to a `requirements.txt` file. This file could be shared with others so that they are able to reproduce your virtual environment.
+
+    `pip list > requirements.txt`
+
+3. Exit your current virtualenv using the "deactivate" command.
+
+## 1.2 Verify Ansible Insallation
+
+1. Run the command and verify the ansible version
+
+   `ansible --version`
+
+2. Ping the localhost to confirm ansible is working properly.
+
+   `ansible -m ping localhost`
+
+- 
 - Find Ansible config file
   - `$ ansible --version`
   - This output points to `config file = /etc/ansible/ansible.cfg`
