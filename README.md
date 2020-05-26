@@ -55,8 +55,15 @@
 
    `ansible -m ping localhost`
 
-- 
-- Find Ansible config file
-  - `$ ansible --version`
-  - This output points to `config file = /etc/ansible/ansible.cfg`
-- Browse the config file and quickly go over different sections, denoted by []
+## 1.3 Ansible Modules and Documenation
+
+1. Ansible by default ships with several modules, you can access the module documenation using two ways:
+
+- Ansible doc
+
+    `ansible-doc -l` > to list all the modules. Exit by pressing 'q'
+    `ansible-doc ios_command` > type the module name directly and read through the documentation.
+
+- Ansible Online doumentation:
+    `https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html' 
+
