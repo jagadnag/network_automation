@@ -37,27 +37,27 @@
 
 6. Use `pip install ansible==2.8.12` and `pip install paramiko` to install ansible and paramiko SSH library.
 
-8. View `pip list` again to see what is now installed.
+7. View `pip list` again to see what is now installed.
 
-9. Optionally export the packages installed in your virtual environment to a `requirements.txt` file. This file could be shared with others so that they are able to reproduce your virtual environment.
+8. Optionally export the packages installed in your virtual environment to a `requirements.txt` file. This file could be shared with others so that they are able to reproduce your virtual environment.
 
     `pip list > requirements.txt`
 
-3. Exit your current virtualenv using the "deactivate" command.
+9. Exit your current virtualenv using the "deactivate" command.
 
 ## 1.2 Verify Ansible Insallation
 
-1. Run the command and verify the ansible version
+Run the command and verify the ansible version
 
    `ansible --version`
 
-2. Ping the localhost to confirm ansible is working properly.
+Ping the localhost to confirm ansible is working properly.
 
    `ansible -m ping localhost`
 
 ## 1.3 Ansible Modules and Documenation
 
-1. Ansible by default ships with several modules, you can access the module documenation using two ways:
+Ansible by default ships with several modules, you can access the module documenation using two ways:
 
 - Run Ansible doc command
 
@@ -71,7 +71,7 @@
 
 ## 1.4 Configure the ansible.cfg file
 
-1. All ansible related configuration can be configured the ansible.cfg file. As a best practise you will be creating the file in the project directory.
+All ansible related configuration can be configured the ansible.cfg file. As a best practise you will be creating the file in the project directory.
 
 - Create a new file named ansible.cfg and apply the below mentioned config
 
@@ -92,7 +92,7 @@ interpreter_python = auto_silent
 
 ## 1.5 Configure the hosts.yml file
 
-1. We will be providing all the details related to the managed hosts in the hosts.yml file. For more details refer to `https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html`
+We will be providing all the details related to the managed hosts in the hosts.yml file. For more details refer to `https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html`
 
 - Create a new file named hosts.yml and define your managed hosts (csr1000v) details. 
 
