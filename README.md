@@ -59,9 +59,10 @@
 
 1. Ansible by default ships with several modules, you can access the module documenation using two ways:
 
-- Ansible doc
+- Run Ansible doc command
 
     `ansible-doc -l` > to list all the modules. Exit by pressing 'q'
+
     `ansible-doc ios_command` > type the module name directly and read through the documentation.
 
 - Ansible Online doumentation:
