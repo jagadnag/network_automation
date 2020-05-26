@@ -18,6 +18,9 @@ Refer the getting started documentation once before you start the lab tasks:
 - Mac Users > can natively install python3 using homebrew and use pip to install ansible
 - csr1000v running as a virtual machine with ssh enabled
 
+Refer the link for python setup:
+https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-python-3
+
 ## 1.1 Virtual Environments and Ansible Installation
 
 1. Make a project directory "myproject" in your home directory:
