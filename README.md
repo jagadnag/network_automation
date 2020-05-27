@@ -14,17 +14,17 @@ Refer the getting started documentation once before you start the lab tasks:
 - Use cisco-ios modules to collect information and configure devices
 
 ### Lab Setup
-Windows Users
+#### Windows Users
 - Use VMware workstation / player or Virtualbox
 - Install a linux vm with python3 and use pip to install ansible
 - csr1000v running as a virtual machine with ssh enabled
 
-Mac Users
+#### Mac Users
 - Use VMware Fusion or Virtualbox
 - can natively install python3 using homebrew and use pip to install ansible
 - csr1000v running as a virtual machine with ssh enabled
 
-Code Editor
+#### Code Editor
 - Microsoft VS Code or editor of your choice
 
 Refer the link for python setup:
@@ -63,11 +63,11 @@ https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up
 
 ## 1.2 Verify Ansible Insallation
 
-Run the command and verify the ansible version
+#### Run the command and verify the ansible version
 
    `ansible --version`
 
-Ping the localhost to confirm ansible is working properly.
+#### Ping the localhost to confirm ansible is working properly.
 
    `ansible -m ping localhost`
 
@@ -75,7 +75,7 @@ Ping the localhost to confirm ansible is working properly.
 
 Ansible by default ships with several modules, you can access the module documenation using two ways:
 
-- Run Ansible doc command
+#### Run Ansible doc command
 
     `ansible-doc -l` > to list all the modules. Exit by pressing 'q'
 
@@ -89,7 +89,7 @@ Ansible by default ships with several modules, you can access the module documen
 
 All ansible related configuration can be configured the ansible.cfg file. As a best practise you will be creating the file in the project directory.
 
-- Create a new file named ansible.cfg and apply the below mentioned config
+#### Create a new file named ansible.cfg and apply the below mentioned config
 
 ```
 [defaults]
@@ -110,7 +110,7 @@ interpreter_python = auto_silent
 
 All details related to the managed hosts will be provided through the hosts.yml file. For more details refer to - https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html
 
-- Create a new file named hosts.yml and define your managed hosts (csr1000v) details. 
+#### Create a new file named hosts.yml and define your managed hosts (csr1000v) details. 
 
 ```
 [cisco]
@@ -123,7 +123,7 @@ ansible_connection=network_cli
 ansible_network_os=ios
 ```
 
-Task 1:
+Task:
 - Create two groups 'core' and 'branch', define few dummy hosts under it.
 - Create a parent group named 'routers' and add core and branch to it.
 - Define the ansible_user and ansible_password variables for the routers group.
@@ -132,15 +132,19 @@ Task 1:
 
 Ansible command line can be very useful to run quick tasks, which dosent need a playbook. You are required to pass in all the required details as arguments. For ex: hosts file or host details, module, module parameters, connection paramertes etc.,
 
-- Run the below mentioned commands and check the results
+#### Run the below mentioned commands and check the results
 
-    `ansible --list-hosts`
-    `ansible -m ios_facts <host or group name>`
-    `ansible -m ios_command -a "commands='show version'" <host or group name>`
+  `ansible --help`
+
+  `ansible --list-hosts all`
+
+  `ansible <host or group name> -m ios_facts`
+
+  `ansible <host or group name> -m ios_command -a "commands='show version'" `
 
 ## 1.7 Develop a basic playbook
 
-Create a basic playbook and run it using the `ansible-playbook` command. 
+#### Create a basic playbook and run it using the `ansible-playbook` command. 
 
 - Example playbook:
 
