@@ -158,7 +158,7 @@ Ansible command line can be very useful to run quick tasks, which dosent need a 
       ping:
 ```
 
-## 1.7 Write playbook using cisco-ios modules
+## 1.8 Write playbook using cisco-ios modules
 
 Refer cisco ios module documentaion and write simple playbooks.
 
