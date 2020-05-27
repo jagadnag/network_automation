@@ -14,9 +14,18 @@ Refer the getting started documentation once before you start the lab tasks:
 - Use cisco-ios modules to collect information and configure devices
 
 ### Lab Setup
-- Windows Users > Install a linux vm with python3 and use pip to install ansible
-- Mac Users > can natively install python3 using homebrew and use pip to install ansible
+Windows Users
+- Use VMware workstation / player or Virtualbox
+- Install a linux vm with python3 and use pip to install ansible
 - csr1000v running as a virtual machine with ssh enabled
+
+Mac Users
+- Use VMware Fusion or Virtualbox
+- can natively install python3 using homebrew and use pip to install ansible
+- csr1000v running as a virtual machine with ssh enabled
+
+Code Editor
+- Microsoft VS Code or editor of your choice
 
 Refer the link for python setup:
 https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-python-3
@@ -119,7 +128,17 @@ Task 1:
 - Create a parent group named 'routers' and add core and branch to it.
 - Define the ansible_user and ansible_password variables for the routers group.
 
-## 1.6 Develop a basic playbook
+## 1.6 Ansible Command line
+
+Ansible command line can be very useful to run quick tasks, which dosent need a playbook. You are required to pass in all the required details as arguments. For ex: hosts file or host details, module, module parameters, connection paramertes etc.,
+
+- Run the below mentioned commands and check the results
+
+    `ansible --list-hosts`
+    `ansible -m ios_facts <host or group name>`
+    `ansible -m ios_command -a "commands='show version'" <host or group name>`
+
+## 1.7 Develop a basic playbook
 
 Create a basic playbook and run it using the `ansible-playbook` command. 
 
