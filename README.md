@@ -138,9 +138,11 @@ Ansible command line can be very useful to run quick tasks, which dosent need a 
 
   `ansible --list-hosts all`
 
-  `ansible <host or group name> -m ios_facts`
+  `ansible <host or grp name> -m ios_facts`
 
-  `ansible <host or group name> -m ios_command -a "commands='show version'" `
+  `ansible <host or grp name> -m ios_command -a "commands='show version'" `
+
+  `ansible <host or grp name> -m ios_command -a "commands='show ip int brie'" > sip.txt`
 
 ## 1.7 Develop a basic playbook
 
