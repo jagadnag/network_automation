@@ -30,6 +30,15 @@ Refer the getting started documentation once before you start the lab tasks:
 Refer the link for python setup:
 https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-python-3
 
+
+#### Session-01 Lab tasks:
+- Install Ansible
+- Configure ansible.cfg and hosts file
+- Learn to use ansible command line module
+- Learn to use ansible-doc and online documentation
+- Write ansible playbooks with cisco_ios command, config and facts modules to interact with CSR1000v
+
+
 ## 1.1 Virtual Environments and Ansible Installation
 
 1. Make a project directory "myproject" in your home directory:
@@ -91,6 +100,8 @@ All ansible related configuration can be configured the ansible.cfg file. As a b
 
 #### Create a new file named ansible.cfg and apply the below mentioned config
 
+More info - https://docs.ansible.com/ansible/2.8/reference_appendices/config.html#ansible-configuration-settings
+
 ```
 [defaults]
 gathering = explicit
@@ -106,9 +117,9 @@ retry_files_enabled = False
 interpreter_python = auto_silent
 ```
 
-## 1.5 Create Ansible Inventory using hosts.yml file
+## 1.5 Create Ansible Inventory
 
-All details related to the managed hosts will be provided through the hosts.yml file. For more details refer to - https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html
+All details related to the managed hosts are provided through inventory file. Ansible inventory can be created manually or dynamically using ini or yaml syntax. For more details refer to - https://docs.ansible.com/ansible/2.8/user_guide/intro_inventory.html
 
 #### Create a new file named hosts.yml and define your managed hosts (csr1000v) details. 
 
@@ -123,7 +134,7 @@ ansible_connection=network_cli
 ansible_network_os=ios
 ```
 
-Task:
+#### Task:
 - Create two groups 'core' and 'branch', define few dummy hosts under it.
 - Create a parent group named 'routers' and add core and branch to it.
 - Define the ansible_user and ansible_password variables for the routers group.
@@ -164,15 +175,15 @@ Ansible command line can be very useful to run quick tasks, which dosent need a 
 
 Refer cisco ios module documentaion and write simple playbooks.
 
-Task 1:
+#### Task 1:
 - Write a playbook to collect show version command output
 - Use the debug module to print the output to the screen
 
-Task 2:
+#### Task 2:
 - Write a playbook to configure a new syslog-server
 - Use the debug module to print the output to the screen
 
-Task 3:
+#### Task 3:
 - Write a playbook to use ios_facts module
 - Use the debug module to print the facts to the screen
 

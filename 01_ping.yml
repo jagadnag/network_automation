@@ -1,8 +1,21 @@
 ---
 - name: Ping CSR01
-  hosts: cisco
+  hosts: server
 
   tasks:
-    - name: lauching Ping
+    - name: Ping testing
       ping:
-  
+
+/bin
+/dev
+/etc
+/boot
+/gns3
+/gns3volumes
+/home 
+/lib
+/lib64
+/root
+/sbin
+/usr
+/var
